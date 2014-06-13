@@ -1,0 +1,22 @@
+{
+    "name": "matthiasnoback/console-command-generator-bundle",
+    "type": "symfony-bundle",
+    "description": "Bundle for generating Symfony2 commands",
+    "keywords": ["generator", "console command"],
+    "homepage": "http://github.com/matthiasnoback/ConsoleCommandGeneratorBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthias Noback",
+            "email": "matthiasnoback@gmail.com",
+            "homepage": "http://php-and-symfony.matthiasnoback.nl"
+        }
+    ],
+    "require": {
+        "sensio/generator-bundle": "~2.2"
+    },
+    "target-dir": "Matthias/Bundle/ConsoleCommandGeneratorBundle",
+    "autoload": {
+        "psr-0" : { "Matthias\\Bundle\\ConsoleCommandGeneratorBundle" : "" }
+    }
+}

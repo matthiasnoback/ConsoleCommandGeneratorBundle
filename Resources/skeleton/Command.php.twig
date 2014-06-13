@@ -1,0 +1,34 @@
+<?php
+
+namespace {{ namespace }};
+
+{% block use_statements %}
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+{% endblock use_statements %}
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+{% block class_definition %}
+class {{ class }} extends ContainerAwareCommand
+{% endblock class_definition %}
+{
+    protected function configure()
+    {
+        $this
+            ->setName('{{ command }}')
+{% for argument in arguments %}
+            ->addArgument('{{ argument.name }}', InputArgument::{{ argument.mode|upper }}, {% if argument.description %}{{ argument.description }}{% else %}null{% endif %}, {% if argument.default %}{{ argument.default }}{% else %}null{% endif %})
+{% endfor %}
+        ;
+{% block configure_body %}
+{% endblock configure_body %}
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+{% block execute_body %}
+{% endblock execute_body %}
+    }
+}
