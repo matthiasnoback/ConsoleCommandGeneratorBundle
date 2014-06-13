@@ -8,6 +8,8 @@ You will be asked to supply some information, after which a command class will b
 
 ![Screenshot](https://raw.githubusercontent.com/matthiasnoback/ConsoleCommandGeneratorBundle/master/Resources/doc/assets/generate-console-command.png)
 
+The resulting console command would look like this:
+
 ```php
 
 namespace Matthias\Bundle\DemoBundle\Command;
